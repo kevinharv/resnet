@@ -1,11 +1,8 @@
-# Standard Dockerfile Template
-# Built from Debian 12 for performance and stability.
-
 ARG OS_VERSION=latest
 ARG VERSION="0.1.0"
 
-LABEL application="Example Application"
-LABEL description="Example Dockerfile for template."
+LABEL application="ResNet"
+LABEL description="ResNet Management Service"
 LABEL customer="None"
 LABEL maintainer="K. Harvey"
 LABEL version=${VERSION}

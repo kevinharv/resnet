@@ -9,10 +9,10 @@ services:
         OS_VERSION: 12
         VERSION: 0.0.1
       labels:
-        APPLICATION: Example-App
+        APPLICATION: ResNet
         # other labels to add later
-    image: kevharv/example:latest
-    container_name: Example Application
+    image: kevharv/resnet:latest
+    container_name: ResNet
     depends_on:
       - database
     env_file:
@@ -34,9 +34,11 @@ services:
 
   database:
     image: postgres:16
-    container_name: Example Application Database
+    container_name: ResNet_DB
     volumes:
       - db_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     env_file:
       - .env.db
     healthcheck:
@@ -48,4 +50,4 @@ services:
 
 volumes:
   db_data:
-    name: Database Volume
+    name: Database_Volume
